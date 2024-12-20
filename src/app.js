@@ -17,11 +17,15 @@ let when = [
 ];
 
 window.onload = function() {
-  let rdm1 = Math.floor(Math.random() * who.length);
-  let rdm2 = Math.floor(Math.random() * action.length);
-  let rdm3 = Math.floor(Math.random() * what.length);
-  let rdm4 = Math.floor(Math.random() * when.length);
-
+  function randomIndice(arr) {
+    return Math.floor(Math.random() * arr.length);
+  }
   document.querySelector(".excuses").innerHTML =
-    who[rdm1] + " " + action[rdm2] + " " + what[rdm3] + " " + when[rdm4];
+    who[randomIndice(who)] +
+    " " +
+    action[randomIndice(action)] +
+    " " +
+    what[randomIndice(what)] +
+    " " +
+    when[randomIndice(when)];
 };
